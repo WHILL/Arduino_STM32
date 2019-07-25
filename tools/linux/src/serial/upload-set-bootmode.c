@@ -139,13 +139,13 @@ int setBoot0(bool state){
 	return setDTR(!state);
 }
 
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
  	
 	if (argc<2 || argc >3)
 	{
 		printf("Usage upload-reset <serial_device> <Optional_delay_in_milliseconds>\n\r");
-		return;
+		return EXIT_FAILURE;
 	}
 
  	if (openserial(argv[1]))
@@ -180,5 +180,7 @@ main(int argc, char *argv[])
 	else
 	{
 		printf("Failed to open serial device.\n\r");
+		return EXIT_FAILURE;
 	}
+	return 0;
 }
