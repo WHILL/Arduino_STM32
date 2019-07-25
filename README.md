@@ -41,3 +41,21 @@ This repo contains the "Hardware" files to support STM32 based boards on Arduino
 Some suppliers have this board e.g.
 * [ STM32F103VET ](http://www.ebay.com.au/itm/1PCS-STM32F103VET6-ARM-STM32-Minimum-System-Development-Board-Arduino-M77-/301433302819)
 * [There is also a STM32F103ZET board which also works, however they are not always available. They have been listed as "STM32F103ZET6 Minimum System Development Board ARM STM32 Cortex-m3 M75"](http://www.ebay.com.au/itm/1pcs-STM32F103ZET6-Minimum-System-Development-Board-ARM-STM32-Cortex-m3-M75-/291305557264)
+
+
+
+## Configure BOOT0/RESET pins from DTR/RTS
+_Added by WHILL Inc_
+
+If you would like to configure BOOT0/RESET pins by remote, This circuit maybe helpful to enter bootloader mode automatically. 
+Also if you choose Serial as upload method on Arduino IDE, in this repositry runs reset command when you upload a sketch by flipping DTR/RTS lines. (Curretly only Linux)
+
+<img src="https://user-images.githubusercontent.com/2618822/61880440-df86fc00-af2f-11e9-9a5c-64e65fc1dbe0.png" width="80%">
+
+1uF capacitor and 100k resistor on Reset line makes delay on reset.
+
+Following commands are used to reset or get into bootloader mode.
+ - Reset : `Arduino_STM32/tools/linux/serial/upload-reset-flow`
+ - Into Bootloader: `Arduino_STM32/tools/linux/serial/upload-set-bootmode`
+
+
