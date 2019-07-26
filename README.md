@@ -48,7 +48,8 @@ Some suppliers have this board e.g.
 _Added by WHILL Inc_
 
 If you would like to configure BOOT0/RESET pins by remote, This circuit maybe helpful to enter bootloader mode automatically. 
-Also if you choose Serial as upload method on Arduino IDE, in this repositry runs reset command when you upload a sketch by flipping DTR/RTS lines. (Curretly only Linux)
+Also if you choose Serial as upload method on Arduino IDE, in this repositry runs reset command by flipping DTR/RTS lines when you upload a sketch  (Only on Linux currently)
+Besides this allows flash firmware remotely without STM32duino bootloader. On rare ossasions STM32Bootloader fails to go into DFU mode. This may useful if you hope more stability especially application hard to touch reset button or BOOT config pins.
 
 <img src="https://user-images.githubusercontent.com/2618822/61880440-df86fc00-af2f-11e9-9a5c-64e65fc1dbe0.png" width="80%">
 
