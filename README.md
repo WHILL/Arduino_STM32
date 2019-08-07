@@ -51,7 +51,7 @@ If you would like to configure BOOT0/RESET pins by remote, This circuit maybe he
 Also if you choose Serial as upload method on Arduino IDE, in this repositry runs reset command by flipping DTR/RTS lines when you upload a sketch.  (Only on Linux currently)
 Besides this allows flash firmware remotely without STM32duino bootloader. On rare ossasions STM32Bootloader fails to go into DFU mode. This may useful if you hope more stability especially application hard to touch reset button or BOOT config pins.
 
-<img src="https://user-images.githubusercontent.com/2618822/61880440-df86fc00-af2f-11e9-9a5c-64e65fc1dbe0.png" width="80%">
+<img src="https://user-images.githubusercontent.com/2618822/62589256-9eb1be80-b903-11e9-805e-744f82469350.png" width="80%">
 
 1uF capacitor and 100k resistor on Reset line make delay on reset.
 
