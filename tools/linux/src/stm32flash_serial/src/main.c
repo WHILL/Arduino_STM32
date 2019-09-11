@@ -204,6 +204,10 @@ int main(int argc, char* argv[]) {
 	int		failed = 0;
 	int		first_page, num_pages;
 
+	//calc page count
+	npages = (stm->dev->fl_end - stm->dev->fl_start) / stm->dev->fl_ps;
+    fprintf(diag, "npages %d\n", npages);
+
 	/*
 	 * Cleanup addresses:
 	 *
@@ -251,13 +255,14 @@ int main(int argc, char* argv[]) {
 			end = flash_page_to_addr(first_page + num_pages);
 			if (end > stm->dev->fl_end)
 				end = stm->dev->fl_end;
+
 		} else {
 			end = stm->dev->fl_end;
 			num_pages = flash_addr_to_page_ceil(end) - first_page;
 		}
-
-		if (!first_page && end == stm->dev->fl_end)
-			num_pages = 0xff; /* mass erase */
+		//avoid forcelly to erase all memory
+		//if (!first_page && end == stm->dev->fl_end)
+		//		num_pages = 0xff; /* mass erase */
 	}
 
 	if (rd) {
@@ -340,6 +345,8 @@ int main(int argc, char* argv[]) {
 	} else if (wr) {
 		fprintf(diag, "Write to memory\n");
 
+		fprintf(diag, "first_page     : %d\n", first_page);
+		fprintf(diag, "num_pages      : %d\n", num_pages);
 		off_t 	offset = 0;
 		ssize_t r;
 		unsigned int size;

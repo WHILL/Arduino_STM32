@@ -348,7 +348,7 @@ genericSTM32F103C.upload.protocol=maple_dfu
 genericSTM32F103C.menu.device_variant.STM32F103C8=STM32F103C8 (20k RAM. 64k Flash)
 genericSTM32F103C.menu.device_variant.STM32F103C8.build.cpu_flags=-DMCU_STM32F103C8
 genericSTM32F103C.menu.device_variant.STM32F103C8.build.ldscript=ld/jtag_c8.ld
-genericSTM32F103C.menu.device_variant.STM32F103C8.upload.maximum_size=65536
+genericSTM32F103C.menu.device_variant.STM32F103C8.upload.maximum_size=63488
 genericSTM32F103C.menu.device_variant.STM32F103C8.upload.maximum_data_size=20480
 
 ## STM32F103CB -------------------------
