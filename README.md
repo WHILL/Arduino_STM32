@@ -59,4 +59,16 @@ Following commands are used to reset or get into bootloader mode.
  - Reset : `Arduino_STM32/tools/linux/serial/upload-reset-flow`
  - Into Bootloader: `Arduino_STM32/tools/linux/serial/upload-set-bootmode`
 
+## Restriction of the install memory region
+_Added by WHILL Inc_
 
+To use EEPROM emulator(needs 2KB for dummy EEPROM) before and after FW install from arduino IDE, modify stm32flash source code.
+Update **Medium-density** firmware size as 62KB for **STM32F103C8**, it defined in ```dev_table.c```.
+
+```
+{0x410, "Medium-density"    , 0x20000200, 0x20005000, 0x08000000, 0x0800F800,  4, 1024, 0x1FFFF800, 0x1FFFF80F, 0x1FFFF000, 0x1FFFF800},
+```
+
+And update ```main.c``` of stm32flash to restrict erase size as firmware size (commit:[9553961b41f0c9b5562a4436a5860e295099f6e8](https://github.com/WHILL/Arduino_STM32/commit/9553961b41f0c9b5562a4436a5860e295099f6e8)).
+
+Notice if you want to write over 62KB in **Medium-density** size, you have to update above implement.
