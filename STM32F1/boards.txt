@@ -353,10 +353,17 @@ genericSTM32F103C.menu.device_variant.STM32F103C8.upload.maximum_data_size=20480
 
 ## STM32F103CB -------------------------
 genericSTM32F103C.menu.device_variant.STM32F103CB=STM32F103CB (20k RAM. 128k Flash)
-genericSTM32F103C.menu.device_variant.STM32F103CB.build.cpu_flags=-DMCU_STM32F103CB -DXTAL16M
+genericSTM32F103C.menu.device_variant.STM32F103CB.build.cpu_flags=-DMCU_STM32F103CB
 genericSTM32F103C.menu.device_variant.STM32F103CB.build.ldscript=ld/jtag.ld
 genericSTM32F103C.menu.device_variant.STM32F103CB.upload.maximum_size=129024
 genericSTM32F103C.menu.device_variant.STM32F103CB.upload.maximum_data_size=20480
+
+## STM32F103CBXTAL16M -------------------------
+genericSTM32F103C.menu.device_variant.STM32F103CBXTAL16M=STM32F103CB (20k RAM. 128k Flash, XTAL16M)
+genericSTM32F103C.menu.device_variant.STM32F103CBXTAL16M.build.cpu_flags=-DMCU_STM32F103CB -DXTAL16M
+genericSTM32F103C.menu.device_variant.STM32F103CBXTAL16M.build.ldscript=ld/jtag.ld
+genericSTM32F103C.menu.device_variant.STM32F103CBXTAL16M.upload.maximum_size=129024
+genericSTM32F103C.menu.device_variant.STM32F103CBXTAL16M.upload.maximum_data_size=20480
 
 #---------------------------- UPLOAD METHODS ---------------------------
 
@@ -460,6 +467,13 @@ genericSTM32F103R.menu.device_variant.STM32F103RB.build.cpu_flags=-DMCU_STM32F10
 genericSTM32F103R.menu.device_variant.STM32F103RB.upload.maximum_size=131072
 genericSTM32F103R.menu.device_variant.STM32F103RB.upload.maximum_data_size=20480
 genericSTM32F103R.menu.device_variant.STM32F103RB.build.ldscript=ld/stm32f103rb.ld
+
+genericSTM32F103R.menu.device_variant.STM32F103RBXTAL16M=STM32F103RB (20k RAM. 128k Flash, XTAL16M)
+genericSTM32F103R.menu.device_variant.STM32F103RBXTAL16M.build.variant=generic_stm32f103r8
+genericSTM32F103R.menu.device_variant.STM32F103RBXTAL16M.build.cpu_flags=-DMCU_STM32F103RB -DXTAL16M
+genericSTM32F103R.menu.device_variant.STM32F103RBXTAL16M.upload.maximum_size=131072
+genericSTM32F103R.menu.device_variant.STM32F103RBXTAL16M.upload.maximum_data_size=20480
+genericSTM32F103R.menu.device_variant.STM32F103RBXTAL16M.build.ldscript=ld/stm32f103rb.ld
 
 genericSTM32F103R.menu.device_variant.STM32F103RC=STM32F103RC (48k RAM. 256k Flash)
 genericSTM32F103R.menu.device_variant.STM32F103RC.build.variant=generic_stm32f103r
