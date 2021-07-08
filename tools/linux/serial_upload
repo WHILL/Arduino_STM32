@@ -1,4 +1,5 @@
 #!/bin/bash
+stty 921600 -F /dev/"$1"
 $(dirname $0)/serial/upload-set-bootmode /dev/"$1"
-$(dirname $0)/stm32flash/stm32flash -g 0x8000000 -b 115200 -w "$4" /dev/"$1" 
+$(dirname $0)/stm32flash/stm32flash -g 0x8000000 -b 921600 -w "$4" /dev/"$1" 
 $(dirname $0)/serial/upload-reset-flow /dev/"$1"
